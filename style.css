@@ -1,0 +1,308 @@
+/* ===================================================================================
+   🐉 DRAGON TIGER - ROYAL CASINO ARENA STYLESHEET (১০০% মোবাইল রেস্পন্সিভ বর্ম)
+   =================================================================================== */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #05070c;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+/* 🔒 [মেগা কিলার হেডার ব্লকার বর্ম ভাই ভাই]: লবির মেইন হেডারের সাথে ডাবল ব্যালেন্স বক্স জ্যাম ওয়ান-শটে সাফ! */
+.header {
+    display: none !important;
+}
+
+/* 🏟️ ক্যাসিনো মেইন ডার্ক নিওন রেড-গোল্ড ম্যাট টেবিল সিঙ্ক */
+body {
+    background: radial-gradient(circle at center, #121624 0%, #05070c 100%);
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* 🎯 ওস্তাদের কিংস সিদ্ধান্ত অনুযায়ী ওরিজিনাল bg.png নাম লক রাখা হলো ভাই ভাই */
+    background: url('bg.png') no-repeat center center/cover;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 🎰 ড্রাগন ও টাইগার লাইভ ২-কার্ড শোডাউন গ্রিড প্যানেল চ্যাম */
+.board-dealing-zone {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+    gap: 15px;
+    flex: 1;
+    min-height: 190px;
+    margin-top: 20px;
+}
+
+.board-column {
+    flex: 1;
+    background: rgba(8, 11, 20, 0.85);
+    border: 1px solid rgba(255,255,255,0.02);
+    border-radius: 16px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.8);
+}
+
+/* 🐉 ড্রাগন গোল্ডেন-ব্লু গ্লোয়িং বর্ম */
+.dragon-bg-glow {
+    border-color: rgba(56, 189, 248, 0.1) !important;
+    box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.05), 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* 🐅 টাইগার রেড-অরেঞ্জ গ্লোয়িং বর্ম */
+.tiger-bg-glow {
+    border-color: rgba(244, 63, 94, 0.1) !important;
+    box-shadow: inset 0 0 20px rgba(244, 63, 94, 0.05), 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.column-header-title {
+    font-size: 13px;
+    font-weight: 900;
+    text-align: center;
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.header-player {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(14, 116, 144, 0.2) 100%);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.header-banker {
+    background: linear-gradient(135deg, rgba(244, 63, 94, 0.2) 0%, rgba(159, 18, 57, 0.2) 100%);
+    color: #f43f5e;
+    border: 1px solid rgba(244, 63, 94, 0.3);
+}
+
+/* 📱 তাসের কার্ড রেন্ডারিং মিডল প্লেসমেন্ট */
+.cards-display-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    width: 100%;
+}
+
+/* 🃏 কার্ড ফ্লিপ হওয়া এনিমেশন নোড */
+.card-deal-animation-node {
+    animation: dealIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    transform: scale(0) rotate(-5deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+@keyframes dealIn {
+    to { transform: scale(1) rotate(0deg); }
+}
+
+/* 💸 বাজি ধরার প্রধান ৩টি নিয়ন মডিউল বোতাম */
+.betting-board {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    gap: 12px;
+}
+
+.bet-board-btn {
+    flex: 1;
+    background: linear-gradient(180deg, #161a26 0%, #0d101a 100%);
+    border: 2px solid #232a3d;
+    border-radius: 14px;
+    padding: 14px 4px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.board-label {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.dragon-select-btn .board-label { color: #38bdf8; }
+.tiger-select-btn .board-label { color: #f43f5e; }
+.tie-select-btn .board-label { color: #22c55e; }
+
+.board-odds {
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffaa00;
+}
+
+/* 🎯 ক্লিকেবল একটিভ নিয়ন গ্লো ইফেক্ট লক ভাই ভাই */
+.bet-board-btn.active-side-bet {
+    border-color: #ffaa00 !important;
+    background: linear-gradient(180deg, #261f12 0%, #141009 100%) !important;
+    box-shadow: 0 0 15px rgba(255, 170, 0, 0.4) !important;
+}
+
+/* 📢 লাইভ মেসেজ স্ট্যাটাস বার */
+.win-status-container {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding: 11px;
+    margin: 10px;
+    background: rgba(11, 14, 23, 0.6);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.02);
+}
+
+#win-text-msg {
+    font-size: 12px;
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: 0.3px;
+}
+
+/* 🎛️ নিচের মেইন গেম কন্ট্রোল প্যানেল ফুটার */
+.footer-controls {
+    position: relative;
+    z-index: 10;
+    background: #080a10;
+    border-top: 1px solid #161b29;
+    padding: 12px 15px 25px 15px;
+    box-shadow: 0 -5px 25px rgba(0,0,0,0.7);
+}
+
+.play-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* প্লাস-মাইনাস নেভিগেশন নব */
+.bet-btn-nav {
+    background: #121624;
+    border: 1px solid #222a42;
+    color: #ffaa00;
+    font-size: 18px;
+    font-weight: 800;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🚀 মেইন অ্যাকশন বোতাম (DEAL কিলার গোল্ডেন গ্লো) */
+.play-btn {
+    flex: 1;
+    background: linear-gradient(180deg, #ffbb00 0%, #d48800 100%);
+    color: #000000;
+    font-size: 15px;
+    font-weight: 900;
+    border: none;
+    padding: 12px 0;
+    border-radius: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(212,136,0,0.35);
+    transition: all 0.15s ease;
+}
+
+.play-btn:active {
+    transform: scale(0.97);
+}
+
+.play-btn:disabled {
+    background: #161b26 !important;
+    color: #454d66 !important;
+    box-shadow: none !important;
+    cursor: not-allowed;
+}
+
+/* 🤖 অটো স্পিন বোতাম আইকন গ্রিড */
+.icon-group {
+    display: flex;
+    align-items: center;
+}
+
+.icon-btn {
+    background: #121624;
+    border: 1px solid #222a42;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.icon-btn::before {
+    content: "🤖";
+    font-size: 15px;
+}
+
+.icon-btn.active {
+    background: #ffaa00;
+    border-color: #ffbb00;
+    box-shadow: 0 0 10px rgba(255,170,0,0.4);
+}
+
+.icon-btn.active::before {
+    filter: brightness(0);
+}
+
+/* 💥 উইন-লস নিয়ন গ্লোয়িং বর্ডার অ্যানিমেশন বর্ম */
+.win-glow-bar {
+    border-color: rgba(0, 255, 136, 0.4) !important;
+    background: rgba(0, 255, 136, 0.05) !important;
+}
+
+.win-glow-bar #win-text-msg {
+    color: #00ff88 !important;
+}
+
+.lose-glow-bar {
+    border-color: rgba(255, 51, 102, 0.4) !important;
+    background: rgba(255, 51, 102, 0.05) !important;
+}
+
+.lose-glow-bar #win-text-msg {
+    color: #ff3366 !important;
+}
